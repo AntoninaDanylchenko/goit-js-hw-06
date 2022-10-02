@@ -18,4 +18,5 @@ ingredients.forEach((ingredient) => {
   const newItem = document.createElement("li");
   listEl.append(newItem);
   newItem.textContent = ingredient;
+  newItem.classList.add("item");
 });
