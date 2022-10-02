@@ -8,12 +8,14 @@ const ingredients = [
 ];
 const listEl = document.querySelector("ul");
 
-const markup = ingredients
-  .map((ingredient) => `<li class="list-item">${ingredient}</li>`)
-  .join("");
+// const markup = ingredients
+//   .map((ingredient) => '<li class="list-item">${ingredient}</li>')
+//   .join("");
 
-// Check the console, you'll see a single string with HTML tags
-console.log(markup);
+// listEl.innerHTML = markup;
 
-// Adding all the markup in one operation
-listEl.innerHTML = markup;
+ingredients.forEach((ingredient) => {
+  const newItem = document.createElement("li");
+  listEl.append(newItem);
+  newItem.textContent = ingredient;
+});
