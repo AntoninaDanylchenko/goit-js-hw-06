@@ -8,15 +8,15 @@ const ingredients = [
 ];
 const listEl = document.querySelector("ul");
 
-// const markup = ingredients
-//   .map((ingredient) => '<li class="list-item">${ingredient}</li>')
-//   .join("");
+const makeList = (options) => {
+  return options.map((option) => {
+    const newItem = document.createElement("li");
+    newItem.textContent = option;
+    newItem.classList.add("item");
+    return newItem;
+  });
+};
 
-// listEl.innerHTML = markup;
+const itemArrayEl = makeList(ingredients);
 
-ingredients.forEach((ingredient) => {
-  const newItem = document.createElement("li");
-  listEl.append(newItem);
-  newItem.textContent = ingredient;
-  newItem.classList.add("item");
-});
+listEl.append(...itemArrayEl);
