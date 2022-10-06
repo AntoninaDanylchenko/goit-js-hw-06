@@ -4,7 +4,9 @@ const btnDestroyEl = document.querySelector("[data-destroy]");
 const numberInputEl = document.querySelector("input");
 
 function getRandomHexColor() {
-  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+  return `#${Math.floor(Math.random() * 16777215)
+    .toString(16)
+    .padStart(6, 0)}`;
 }
 
 const arrayOfBoxes = [];
@@ -20,6 +22,7 @@ function createColectionBoxes(number, array) {
 
     newBox.style.marginTop = "10px";
     newBox.style.backgroundColor = getRandomHexColor();
+    console.log(newBox.style.backgroundColor);
 
     array.push(newBox);
   }
