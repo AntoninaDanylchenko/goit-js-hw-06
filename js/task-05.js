@@ -4,5 +4,7 @@ const output = document.getElementById("name-output");
 textInput.addEventListener("input", onInputChange);
 
 function onInputChange(event) {
-  output.textContent = event.currentTarget.value;
+  return (output.textContent = event.currentTarget.value.trim().length
+    ? event.currentTarget.value
+    : "Anonymous");
 }
