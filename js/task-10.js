@@ -15,19 +15,23 @@ function createColectionBoxes(number, array) {
   const lengthOfArray = array.length;
 
   for (let i = lengthOfArray; i < lengthOfArray + number; i += 1) {
-    const newBox = document.createElement("div");
-
-    newBox.style.width = `${30 + 10 * i}px`;
-    newBox.style.height = `${30 + 10 * i}px`;
-
-    newBox.style.marginTop = "10px";
-    newBox.style.backgroundColor = getRandomHexColor();
-    console.log(newBox.style.backgroundColor);
-
+    const newBox = createOneBox(i);
     array.push(newBox);
   }
-  console.log(array);
+
   return divForBoxes.append(...array);
+}
+
+function createOneBox(increm) {
+  const newBox = document.createElement("div");
+
+  newBox.style.width = `${30 + 10 * increm}px`;
+  newBox.style.height = `${30 + 10 * increm}px`;
+
+  newBox.style.marginTop = "10px";
+  newBox.style.backgroundColor = getRandomHexColor();
+
+  return newBox;
 }
 
 let numberFromInput = 0;
