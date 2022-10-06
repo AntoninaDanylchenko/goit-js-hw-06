@@ -11,7 +11,7 @@ const arrayOfBoxes = [];
 
 function createColectionBoxes(number, array) {
   const lengthOfArray = array.length;
-  console.log(lengthOfArray);
+
   for (let i = lengthOfArray; i < lengthOfArray + number; i += 1) {
     const newBox = document.createElement("div");
 
